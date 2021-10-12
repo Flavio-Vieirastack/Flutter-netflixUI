@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_responsive_ui/data/data.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/Previews.dart';
+import 'package:flutter_netflix_responsive_ui/widgets/contentList.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/content_header.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/custom_appBar.dart';
 
@@ -54,10 +55,35 @@ class _HomescreenState extends State<Homescreen> {
       body: CustomScrollView(
         controller: _scroolController,
         slivers: [
-          SliverToBoxAdapter(child: ContentHeader(featureContent: sintelContent)),
-          SliverPadding(padding: const EdgeInsets.only(top: 20),
-          sliver: SliverToBoxAdapter(child: Previews(title: "Previews", contentList: previews),),
-          )
+          SliverToBoxAdapter(
+              child: ContentHeader(featureContent: sintelContent)),
+          SliverPadding(
+            padding: const EdgeInsets.only(top: 20),
+            sliver: SliverToBoxAdapter(
+              child: Previews(title: "Previews", contentList: previews),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Contentlist(
+              title: "My list",
+              contentList: myList,
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            child: Contentlist(
+              title: "Netflix Originals",
+              contentList: originals,
+              isOriginals: true
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            child: Contentlist(
+              title: "Trending",
+              contentList: trending,
+            ),
+          ),
         ],
       ),
     );
