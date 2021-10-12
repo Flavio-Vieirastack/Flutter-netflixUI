@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_responsive_ui/data/data.dart';
+import 'package:flutter_netflix_responsive_ui/widgets/Previews.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/content_header.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/custom_appBar.dart';
 
